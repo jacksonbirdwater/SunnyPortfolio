@@ -121,6 +121,20 @@ body {
   border-radius: 8px;
   padding: 20px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  
+  /* NEW: Fixes link styling and prepares for animation */
+  text-decoration: none;         /* Removes text underlining */
+  display: block;                /* Makes the entire card area clickable, not just text */
+  color: inherit;                /* Keeps your text color looking clean */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth hover transition */
+}
+
+/* NEW: Interactive hover effect so the user knows it's clickable */
+.project-card:hover {
+  transform: translateY(-2px);   /* Lifts the card slightly */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* Deepens the shadow */
+  border-color: var(--accent);   /* Gives the border your blue accent color */
+  cursor: pointer;               /* Changes mouse to a clicking hand indicator */
 }
 
 .project-card__title {
@@ -133,7 +147,6 @@ body {
   color: var(--text-muted);
   font-size: 0.95rem;
 }
-
 /* ==========================================================================
    5. FOOTER
    ========================================================================== */
